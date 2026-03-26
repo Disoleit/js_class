@@ -4,13 +4,16 @@ import { Zombie } from '../Character/Zombie.js';
 describe('Character Class', () => {
     describe('Constructor validation', () => {
         test('should create character with valid parameters', () => {
+            const expected = {
+                name: 'Hero',
+                type: 'Bowman',
+                health: 100,
+                level: 1,
+                attack: 25,
+                defence: 25
+            };
             const char = new Character('Hero', 'Bowman', 25, 25);
-            expect(char.name).toBe('Hero');
-            expect(char.type).toBe('Bowman');
-            expect(char.health).toBe(100);
-            expect(char.level).toBe(1);
-            expect(char.attack).toBe(25);
-            expect(char.defence).toBe(25);
+            expect(char).toEqual(expected);
         });
 
         test('should create character with different attack and defence values', () => {

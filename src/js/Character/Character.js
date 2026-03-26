@@ -1,7 +1,7 @@
 const typesList = ['Bowman', 'Swordsman', 'Magician', 'Daemon', 'Undead', 'Zombie'];
 
 export class Character{
-    constructor(name, type, attack, defence){
+    constructor(name, type){
         
         if (typeof name !== 'string') {
             throw new Error('Name must be a string');
@@ -22,8 +22,9 @@ export class Character{
         this.type = type;
         this.health = 100;
         this.level = 1;
-        this.attack = attack;
-        this.defence = defence;
+
+        this.attack = undefined;
+        this.defence = undefined;
     }
     levelUp() {
         if (this.health > 0) {
